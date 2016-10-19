@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>#{res.project}</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+</h:head>
+<h:body>
+    <h1>#{res.title}</h1>
+    <h:form>
+    	<h:panelGrid columns="2">
+			#{res.number}<h:outputText value="#{resBb.number}" />
+			#{res.name}<h:outputText value="#{resBb.name}" />
+		</h:panelGrid>
+		<h:link outcome="res_input1">#{res.backLnk}</h:link>
+    </h:form>
+</h:body>
+</html>

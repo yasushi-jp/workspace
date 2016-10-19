@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+body {
+	font-size: 12pt;
+	font-family: メイリオ, Osaka;
+	margin: 30px;
+	line-height: 1.5em;
+	color: blue;
+}
+h1 { font-size: 1.5em; }
+
+pre {
+	margin: 0px;
+}
+
+.btn {
+	margin-top: 1opx;
+	width: 100px;
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 3px;
+}
+
+.c1 {
+	width: 100px;
+	text-align: center;
+	background-color: #dddddd;
+	padding: 3px;
+	vertical-align: center;
+}
+.c2 {
+	width: 200px;
+	padding: 3px;
+	vertical-align: center;
+}
+
+.blue14{
+    color: #0066cc;
+}
+
+.col {
+	vertical-align: top;
+}
+
+.error {
+	color: red;
+	font-size: 0.8em;
+}
+
+.left {
+	text-align: left;
+}

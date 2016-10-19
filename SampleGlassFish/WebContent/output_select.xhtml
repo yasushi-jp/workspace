@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>選択入力結果</title>
+<h:outputStylesheet name="mystyle2.css" library="css" />
+</h:head>
+<h:body>
+    <h1>選択された値の確認</h1>
+	mail : #{bb2.mail}<br />
+	cities : #{bb2}<br />
+	cities2 : #{bb2.toString2()}<br />
+	cities3 : #{bb2.toString3()}<br />
+	city : #{bb2.city}<br />
+	city2 : #{bb2.city2}<br />
+	cities4 : #{bb2.toString4()}<br />
+	city3 : #{bb2.city3}<br />
+	cities5 : #{bb2.toString5()}<br />
+	<h:link outcome="input_select">[戻る]</h:link>
+</h:body>
+</html>

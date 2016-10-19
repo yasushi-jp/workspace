@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+.inp {
+	font-family: メイリオ ,Osaka;
+	font-size: 1em;
+}
+.sel {
+	width: 80px;
+	font-family: メイリオ ,Osaka;
+	font-size: 0.9em;
+}
+body {
+	font-family: メイリオ ,Osaka;
+	font-size: 12px;
+	margin: 30px;
+	line-height: 2.0em;
+}
+h1 {
+	font-size: 1.2em;
+}

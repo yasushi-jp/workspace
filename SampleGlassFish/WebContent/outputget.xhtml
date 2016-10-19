@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <f:metadata>
+      	<f:viewParam name="data" value="#{bb.data}" />
+      </f:metadata>
+<h:head>
+<title>GETパラメータ受け取り</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+</h:head>
+<h:body>
+    <h1>画面入力結果</h1>
+    <h:form>
+    	<h:panelGrid columns="2" cellspacing="0" border="1" rules="all" columnClasses="c1, c2">
+    		<f:facet name="header">
+    			以下の内容で受け付けました
+    		</f:facet>
+			データ<h:outputText value="#{bb.data}" />
+		</h:panelGrid>
+		<h:link outcome="input3" style="display:block; margin-top10px;">[戻る]</h:link>
+    </h:form>
+</h:body>
+</html>

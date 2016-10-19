@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+<title>コンバータ入力</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+</h:head>
+<h:body>
+    <h:form>
+	<h1>日付コンバータ</h1>
+	<h:panelGrid columns="3">
+	コード<h:inputText id="code" value="#{convBb.code}"  required="true" label="コード">
+			<f:validateLength maximum="5" minimum="5" />
+		</h:inputText>
+		<h:message for="code" styleClass="error" />
+	売上日<h:inputText id="date" value="#{convBb.date}" p:type="date" label="売上日">
+			<f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo" />
+			<f:validateRequired />
+		</h:inputText>
+		<h:message for="date" styleClass="error" />
+	金額<h:inputText id="amount" value="#{convBb.amount}" label="金額">
+			<f:validateLongRange minimum="100" maximum="100000" />
+		</h:inputText>
+		<h:message for="amount" styleClass="error" />
+	</h:panelGrid>
+    <h:commandButton value="送信" action="#{convBb.next}" />
+    </h:form>
+</h:body>
+</html>

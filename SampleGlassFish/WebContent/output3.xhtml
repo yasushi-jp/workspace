@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>Sample02</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+</h:head>
+<h:body>
+    <h1>画面入力結果</h1>
+    <h:form>
+    	<h:panelGrid columns="2" cellspacing="0" border="1" rules="all" columnClasses="c1, c2">
+    		<f:facet name="header">
+    			以下の内容で受け付けました
+    		</f:facet>
+			メールアドレス<h:outputText value="#{bb.mail}" />
+			ご質問<h:outputText value="#{bb.msg}" />
+			ご質問(pre)<h:panelGroup><pre>#{bb.msg}</pre></h:panelGroup>
+			ご質問(pre2)<h:panelGroup><pre><h:outputText value="#{bb.msg}" /></pre></h:panelGroup>
+			パスワード<h:outputText value="#{bb.password}" />
+			ブラウザ情報<h:outputText value="#{bb.browser}" />
+		</h:panelGrid>
+		<h:link outcome="input3" style="display:block; margin-top10px;">[戻る]</h:link>
+    </h:form>
+</h:body>
+</html>

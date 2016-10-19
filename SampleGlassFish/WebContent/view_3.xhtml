@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>ConversationScoped</title>
+<h:outputStylesheet library="css" name="mystyle.css" />
+</h:head>
+<h:body>
+<h:form>
+    <h1>会話スコープ＜画面3＞</h1>
+    <h:panelGrid columns="2">
+    	お名前<h:inputText value="#{conversationBb.name}" />
+    	ご住所<h:inputText value="#{conversationBb.address}" />
+    	商品名<h:inputText value="#{conversationBb.product}" />
+    	数　量<h:inputText value="#{conversationBb.qty}" />
+    </h:panelGrid>
+	<h:commandButton value="戻る"  action="#{conversationBb.goto_2}"/>
+	<h:commandButton value="購入"  action="#{conversationBb.goto_0}"/>
+</h:form>
+</h:body>
+</html>

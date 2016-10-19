@@ -1,0 +1,42 @@
+body {
+    font-family: メイリオ ,Osaka;
+    font-size: 12pt;
+    margin: 10px 10px 10px 20px;
+    line-height: 1.4em;
+}
+h1 {
+    font-size: 1.2em;
+}
+.hd1 {
+	font-size: 1.2em;
+	text-align: left;
+}
+.hd2 {
+	font-weight: normal;
+	text-align: center;
+	background-color: #d0d0d0;
+}
+.row {
+	background-color: #dbe9f9;
+}
+.c1 {
+	width: 100px;
+	text-align: center;
+}
+.c2 {
+	width: 100px;
+	padding-left: 10px;
+}
+.c3 {
+	width: 200px;
+	padding-left: 10px;
+}
+.c4 {
+	width: 50px;
+	text-align: center;
+}
+.inp {
+	font-family: メイリオ ,Osaka;
+	font-size: 1.0em;
+	border: none;
+}

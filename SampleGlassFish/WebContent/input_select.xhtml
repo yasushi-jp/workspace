@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>Input Select</title>
+<h:outputStylesheet name="mystyle2.css" library="css" />
+</h:head>
+<h:body onload="setBrowser()">
+    <h:form>
+	<h1>チェックボックス</h1>
+		<h:selectBooleanCheckbox value="#{bb2.mail}" styleClass="inp" />メールを受け取る<br />
+	<h1>複数のチェックボックス1</h1>
+		<h:selectManyCheckbox value="#{bb2.cities}" styleClass="inp">
+			<f:selectItem itemValue="1" itemLabel="東京" />
+			<f:selectItem itemValue="2" itemLabel="大阪" />
+			<f:selectItem itemValue="3" itemLabel="福岡" />
+		</h:selectManyCheckbox>
+	<h1>複数のチェックボックス2</h1>
+		<h:selectManyCheckbox value="#{bb2.cities2}" styleClass="inp">
+			<f:selectItems value="#{bb2.items}" />
+		</h:selectManyCheckbox>
+	<h1>複数のチェックボックス3</h1>
+		<h:selectManyCheckbox value="#{bb2.cities3}" styleClass="inp">
+			<f:selectItems value="#{bb2.items2}" />
+		</h:selectManyCheckbox>
+	<h1>ラジオボタン</h1>
+		<h:selectOneRadio value="#{bb2.city}" styleClass="inp">
+			<f:selectItems value="#{bb2.items}" />
+		</h:selectOneRadio>
+	<h1>1つ選択可能なリスト</h1>
+	<h:selectOneListbox value="#{bb2.city2}" size="3" styleClass="sel">
+		<f:selectItems value="#{bb2.items3}" />
+	</h:selectOneListbox><br />
+	<h1>複数選択可能なリスト</h1>
+	<h:selectManyListbox value="#{bb2.cities4}" size="4" styleClass="sel">
+		<f:selectItems value="#{bb2.items3}" />
+	</h:selectManyListbox><br />
+	<h1>1つ選択可能なメニュー</h1>
+	<h:selectOneMenu value="#{bb2.city3}" styleClass="sel" required="true">
+		<f:selectItem itemLabel="--選択--" noSelectionOption="true" />
+		<f:selectItems value="#{bb2.items3}" />
+	</h:selectOneMenu><br/>
+	<h1>複数選択可能なメニュー</h1>
+	<h:selectManyMenu value="#{bb2.cities5}" styleClass="sel">
+		<f:selectItems value="#{bb2.items3}" />
+	</h:selectManyMenu><br/>
+	<h:commandButton value="送信" action="#{bb2.next()}" />
+     </h:form>
+</h:body>
+</html>

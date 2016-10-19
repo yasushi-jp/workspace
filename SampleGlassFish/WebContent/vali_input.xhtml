@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+<title>Beanバリデータ入力</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+</h:head>
+<h:body>
+    <h:form>
+	<h1>Beanバリデータ入力</h1>
+	<h:panelGrid columns="3">
+	コード
+		<h:inputText id="code" value="#{valiBb.code}" p:placeholder="2～5文字" label="コード" />
+		<h:message for="code" styleClass="error" />
+	金額
+		<h:inputText id="amount" value="#{valiBb.amount}" p:placeholder="100～10000" label="金額" />
+		<h:message for="amount" styleClass="error" />
+	割引率
+		<h:inputText id="rate" value="#{valiBb.rate}" p:placeholder="0.5～20.5" label="割引率" />
+		<h:message for="rate" styleClass="error" />
+	日付
+		<h:inputText id="date" value="#{valiBb.date}" p:placeholder="2000/01/01" label="日付">
+			<f:convertDateTime pattern="yyyy-M-d" timeZone="Asia/Tokyo" />
+		</h:inputText>
+		<h:message for="date" styleClass="error" />
+	</h:panelGrid>
+    <h:commandButton value="確認" action="vali_output" />
+    </h:form>
+</h:body>
+</html>

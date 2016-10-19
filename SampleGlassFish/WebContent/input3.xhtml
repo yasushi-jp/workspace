@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title>Sample05-02</title>
+<h:outputStylesheet name="mystyle.css" library="css" />
+<script>
+	function setBrowser(){
+		document.getElementById('myform:br').value = window.navigator.userAgent;
+	}
+</script>
+</h:head>
+<h:body onload="setBrowser()">
+	<h1>画面入力</h1>
+    <h:form id="myform">
+ 		<h:panelGrid columns="2" captionClass="col">
+ 			メール
+ 			<h:panelGroup>
+	 			<h:inputText id="mail" required="true"
+	 			requiredMessage="★必須" value="#{bb.mail}" size="30" label="メール" />
+	 			<h:message for="mail" errorClass="error" />
+ 			</h:panelGroup>
+ 			ご質問
+ 			<h:panelGroup>
+	 			<h:inputTextarea id="msg" required="true"
+	 			requiredMessage="★必須" value="#{bb.msg}" cols="30" rows="5" label="ご質問" />
+	 			<h:message for="msg" errorClass="error" />
+ 			</h:panelGroup>
+ 			パスワード<h:inputSecret value="#{bb.password}" size="10" />
+ 		</h:panelGrid>
+ 		<h:commandButton value="送信" action="#{bb.next()}" />
+ 		<h:messages errorClass="error" />
+ 		<h:inputHidden id="br" value="#{bb.browser}" />
+ 		<h:panelGrid columns="4" columnClasses="c1,c2,c1,c2" headerClass="left">
+ 		<f:facet name="header">h:commandButton</f:facet>
+ 		①<h:commandButton value="送信" />
+		②<h:commandButton value="リセット" type="reset" />
+		③<h:commandButton value="JavaScript" type="button" onclick="alert('ボタン押下')" />
+		④<h:commandButton value="送信" action="#{bb.next()}" />
+		⑤<h:commandButton image="/resources/images/mouseL.gif" action="#{bb.next()}" />
+		⑥<h:commandButton value="JavaScript+送信" action="#{bb.next()}" onclick="alert('ボタン押下')" />
+ 		</h:panelGrid>
+ 		<h:panelGrid columns="4" columnClasses="c1,c2,c1,c2" headerClass="left">
+ 		<f:facet name="header">h:commandLink</f:facet>
+		①<h:commandLink>送信</h:commandLink>
+		②<h:commandLink action="#{bb.next()}">送信</h:commandLink>
+		③<h:commandLink action="#{bb.next()}" onclick="alert('クリックOK')">JavaScript+送信</h:commandLink>
+		④<h:commandLink action="#{bb.next()}"><h:graphicImage library="images" name="mouseL.gif" />送信</h:commandLink>
+ 		</h:panelGrid>
+ 		<h:panelGrid columns="2" columnClasses="c1,c2" headerClass="left">
+ 		<f:facet name="header">h:link(getリクエスト)</f:facet>
+		①<h:link>再表示</h:link>
+		②<h:link outcome="output3">内部のページリンク</h:link>
+		③<h:link outcome="outputget">
+		内部ページへのデータ付きリンク
+		<f:param name="data" value="GETパラメータのデータ" />
+		</h:link>
+ 		</h:panelGrid>
+ 		<h:panelGrid columns="2" columnClasses="c1,c2" headerClass="left">
+ 		<f:facet name="header">h:button</f:facet>
+ 		①<h:button outcome="output3" value="送信" />
+ 		②<h:button outcome="outputget" value="送信(パラメータ付)">
+ 			<f:param name="data" value="Hello" />
+ 		</h:button>
+ 		</h:panelGrid>
+ 		<h:panelGrid columns="2" columnClasses="c1,c2" headerClass="left">
+ 		<f:facet name="header">h:outpuLink</f:facet>
+ 		①<h:outputLink value="http://www.k-webs.jp">サポートWeb</h:outputLink>
+		</h:panelGrid>
+     </h:form>
+</h:body>
+</html>
