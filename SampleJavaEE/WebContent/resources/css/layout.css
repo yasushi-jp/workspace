@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+#top {
+	width: 440px;		/* topの横幅440px */
+}
+#left {
+	width: 120px;		/* leftの横幅120px */
+	float: left;		/* 左に寄せる */
+}
+#content {
+	width: 300px;		/* contentの横幅300px */
+	margin-left: 140px;	/* サイドバーと離すため、左端から140px空ける */
+}
+#bottom {
+	width: 440px;		/* bottomの横幅440px */
+	clear: both;		/* floatを解除 */
+}
