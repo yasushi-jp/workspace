@@ -1,9 +1,6 @@
-package jp.co.otsuka.samplejavaee.mb;
-
-import java.util.Map;
+package jp.co.otsuka.samplejavaee.bb;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -17,17 +14,6 @@ public class Bb {
 	private String food;
 	private Double amount;
 
-
-	/**
-	 *@return 次の画面
-	 */
-	public String next() {
-
-		Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-		food = (String)map.get("food");
-		amount = Double.parseDouble(map.get("amount"));
-		return "output.xhtml";
-	}
 
 	/**
 	 * @return food

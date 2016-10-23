@@ -17,18 +17,19 @@
 	<ui:composition template="/templates/template.xhtml">
 		<ui:define name="title">入力ページ</ui:define>
 		<ui:define name="content">
-		<h:form>
+		<h:form prependId="false">
 			<h:panelGrid columns="2">
 			食品
-			<h:inputText p:name="food" value="#{bb.food}" p:placeholder="食品名" required="true">
+			<h:inputText id="food" value="#{bb.food}" p:placeholder="食品名" required="true">
 				<f:validateLength maximum="10" />
 			</h:inputText>
 			総量
-			<h:inputText p:name="amount" value="#{bb.amount}" p:placeholder="100～10000" required="true">
+			<h:inputText id="amount" value="#{bb.amount}" p:placeholder="100～10000" required="true">
 				<f:validateLongRange minimum="100" maximum="10000" />
 			</h:inputText>
 			</h:panelGrid>
-			<h:commandButton action="#{bb.next}" value="送信" immediate="true" />
+			<h:commandButton action="#{mb.next}" value="送信（チェック有り）" />
+			<h:commandButton action="#{mb.next2}" value="送信（チェック無し）" immediate="true" />
 		</h:form>
 		</ui:define>
 	</ui:composition>
