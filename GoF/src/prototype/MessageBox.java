@@ -4,7 +4,11 @@ import prototype.framework.Product;
 
 /**
  * 文字列を枠線で囲って表示するクラス。
- * useとcreateCloneを実装している。
+ * useとcreateCloneを実装している。<BR>
+ * <BR>
+ * ConcretePrototype（具体的な原型）の役<BR>
+ * ConcretePrototype役はインスタンスをコピーして
+ * 新しいインスタンスを生成するメソッドを実際に実装する。
  *
  */
 public class MessageBox implements Product {

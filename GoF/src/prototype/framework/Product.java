@@ -1,7 +1,11 @@
 package prototype.framework;
 
 /**
- * 抽象メソッドuseとcreateCloneが宣言されているインターフェース
+ * 抽象メソッドuseとcreateCloneが宣言されているインターフェース<BR>
+ * <BR>
+ * Prototype（原型）の役<BR>
+ * Prototype役はインスタンスをコピー（複製）して
+ * 新しいインスタンスを作成するためのメソッドを定める。
  *
  */
 public interface Product extends Cloneable {

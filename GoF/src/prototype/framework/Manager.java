@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * createCloneを使ってインスタンスを複製するクラス
+ * createCloneを使ってインスタンスを複製するクラス<BR>
+ * <BR>
+ * Client（利用者）の役<BR>
+ * Client役はインスタンスをコピーするメソッドを利用して、
+ * 新しいインスタンスを生成する。
  *
  */
 public class Manager {
