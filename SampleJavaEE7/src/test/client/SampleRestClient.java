@@ -61,7 +61,7 @@ public class SampleRestClient {
 		System.out.println("jsonString=" + jsonString);
 
 		// JSONパース
-		result = client.target("https://api.example.com")
+		result = client.target("http://localhost:8080")
 			    .path("/path_to_post_method")
 			    .request()
 			    .post(entity, String.class);
