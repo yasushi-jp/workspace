@@ -11,18 +11,16 @@
        xmlns:pf="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>index</title>
+<title>SampleValidation1</title>
 </h:head>
 <h:body>
 	<h:form>
-		<h:commandButton value="hoge" action="#{testBb.test}" /><br/>
-		text1:<h:outputText value="#{testBb.text1}" /><br/>
-		text2:<h:outputText value="#{testBb.text2}" /><br/>
-		<h:commandButton value="バリデート1" action="#{testBb.validation1}" /><br/>
-		<h:commandButton value="バリデート2" action="#{testBb.validation2}" /><br/>
-		<h:commandButton value="バリデート3" action="#{testBb.validation3}" /><br/>
-		<h:commandButton value="バリデート4" action="#{testBb.validation4}" /><br/>
-		<h:commandButton value="バリデート5" action="#{testBb.validation5}" /><br/>
+		<h:messages></h:messages>
+		Input1:<h:inputText value="#{sampleValidation5.input1}" /><br/>
+		Input2:<h:inputText value="#{sampleValidation5.input2}" /><br/>
+		<h:commandButton value="実行" action="#{sampleValidation5.execute}" /><br/>
+		<h:commandButton value="戻る" action="#{sampleValidation5.back}" immediate="true" /><br/>
+		<h:outputText value="#{sampleValidation5.label}" />
 	</h:form>
 </h:body>
 </html>

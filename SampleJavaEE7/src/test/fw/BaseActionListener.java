@@ -1,6 +1,7 @@
 package test.fw;
 
 import javax.el.MethodExpression;
+import javax.faces.application.NavigationHandler;
 import javax.faces.component.ActionSource2;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;
@@ -27,6 +28,10 @@ public class BaseActionListener implements ActionListener {
 		System.out.println("after invoke");
 
 		System.out.println("outcome=" + outcome);
+
+		NavigationHandler handler = context.getApplication().getNavigationHandler();
+		handler.handleNavigation(context, fromAction, outcome);
+		context.renderResponse();
 	}
 
 }
