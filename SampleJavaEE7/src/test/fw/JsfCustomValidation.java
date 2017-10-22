@@ -9,7 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
 import javax.inject.Named;
 
-@Named
+@Named(value="JsfCustom")
 @ApplicationScoped
 public class JsfCustomValidation implements Serializable {
 

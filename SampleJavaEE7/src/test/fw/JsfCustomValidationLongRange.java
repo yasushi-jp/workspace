@@ -7,7 +7,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-@FacesValidator
+@FacesValidator(value="jsfCustomLongRange")
 public class JsfCustomValidationLongRange implements Validator {
 
 	@Override

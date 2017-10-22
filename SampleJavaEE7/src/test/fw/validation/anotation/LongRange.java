@@ -18,7 +18,9 @@ import test.fw.validation.check.LongRangeValidator;
 @Constraint(validatedBy = {LongRangeValidator.class})
 public @interface LongRange {
 
-    String message() default "{min}以上、{max}以下で入力してください。";
+
+//    String message() default "{min}以上、{max}以下で入力してください。";
+    String message() default "{sample.validator.longrange.message}";
 
     Class<?>[] groups() default {};
 

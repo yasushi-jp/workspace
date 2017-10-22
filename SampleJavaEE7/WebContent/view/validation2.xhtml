@@ -17,10 +17,10 @@
 	<h:form>
 		<h:messages></h:messages>
 		Input1(Size(min=2, max=5)):
-		<h:inputText value="#{sampleValidation2.input1}" label="Input1" validator="#{jsfCustomValidation.validateLength}" />
+		<h:inputText value="#{sampleValidation2.input1}" label="Input1" validator="#{JsfCustom.validateLength}" />
 		<br/>
 		Input2(Min(10), Max(100)):
-		<h:inputText value="#{sampleValidation2.input2}" label="Input2" validator="#{jsfCustomValidation.validateLongRange}" />
+		<h:inputText value="#{sampleValidation2.input2}" label="Input2" validator="#{JsfCustom.validateLongRange}" />
 		<br/>
 		<h:commandButton value="実行" action="#{sampleValidation2.execute}" /><br/>
 		<h:commandButton value="戻る" action="#{sampleValidation2.back}" immediate="true" /><br/>
