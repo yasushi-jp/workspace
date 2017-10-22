@@ -11,9 +11,9 @@ public class SizeValidator implements ConstraintValidator<Size, String> {
 	private int max;
 
 	@Override
-	public void initialize(Size constraintAnotation) {
-		this.min = constraintAnotation.min();
-		this.max = constraintAnotation.max();
+	public void initialize(Size size) {
+		this.min = size.min();
+		this.max = size.max();
 
 	}
 
