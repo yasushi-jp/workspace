@@ -18,7 +18,9 @@ import test.fw.validation.check.SizeValidator;
 @Constraint(validatedBy = {SizeValidator.class})
 public @interface Size {
 
-    String message() default "{min}文字以上、{max}文字以下で入力してください。";
+
+//    String message() default "{min}文字以上、{max}文字以下で入力してください。";
+    String message() default "{sample.validator.size.message}";
 
     Class<?>[] groups() default {};
 
