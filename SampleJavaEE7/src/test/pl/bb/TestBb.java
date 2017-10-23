@@ -40,6 +40,10 @@ public class TestBb implements Serializable {
 		return "validation5.xhtml?faces-redirect=true";
 	}
 
+	public String validation6() {
+		return "validation6.xhtml?faces-redirect=true";
+	}
+
 	/**
 	 * @return text1
 	 */
