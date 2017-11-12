@@ -1,7 +1,11 @@
 package composite;
 
 /**
- * FileとDirectoryを同一視する抽象クラス
+ * FileとDirectoryを同一視する抽象クラス<BR>
+ *
+ * Compornentの役<BR>
+ * Leaf役（File）とComposite役（Directory）を同一視するための役<BR>
+ * Compornent役は、Leaf役とComposite役に共通のスーパークラスとして実現する。<BR>
  *
  */
 public abstract class Entry {

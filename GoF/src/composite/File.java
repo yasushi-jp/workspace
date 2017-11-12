@@ -1,7 +1,10 @@
 package composite;
 
 /**
- * ファイルを表すクラス
+ * ファイルを表すクラス<BR>
+ *
+ * Leaf（葉）の役<BR>
+ * 「中身」を表す役。この役の中には、他のものを入れることができない。
  *
  */
 public class File extends Entry {
@@ -32,7 +35,7 @@ public class File extends Entry {
 
 	@Override
 	protected void printList(String prefix) {
-		System.out.println(prefix + "/" +this);
+		System.out.println(prefix + "/" + this);
 	}
 
 }
