@@ -23,6 +23,9 @@ public class SampleValidation1 implements Serializable {
 	public String back() {
 		return "index.xhtml?faces-redirect=true";
 	}
+	public String back2() {
+		return "";
+	}
 
 	/**
 	 * @return input1
