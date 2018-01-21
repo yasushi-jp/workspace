@@ -3,6 +3,8 @@ package test;
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +60,7 @@ public class SurrogatePairChecker {
 		return false;
 	}
 
-	int[] toCodePointArray(String str) {
+	public static int[] toCodePointArray(String str) {
 		int len = str.length(); // the length of str
 		int[] acp = new int[str.codePointCount(0, len)];
 
@@ -66,5 +68,10 @@ public class SurrogatePairChecker {
 			acp[j++] = str.codePointAt(i);
 		}
 		return acp;
+	}
+
+	public static boolean canEncodinf(String str, String enncode) {
+		CharsetEncoder charsetEncoder = Charset.forName(enncode).newEncoder();
+		return charsetEncoder.canEncode(str);
 	}
 }
