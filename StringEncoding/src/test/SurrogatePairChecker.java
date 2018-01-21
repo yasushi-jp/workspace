@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.sql.SQLException;
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,5 +74,15 @@ public class SurrogatePairChecker {
 	public static boolean canEncodinf(String str, String enncode) {
 		CharsetEncoder charsetEncoder = Charset.forName(enncode).newEncoder();
 		return charsetEncoder.canEncode(str);
+	}
+
+	public static int stringLength(String str) {
+		BreakIterator bi = BreakIterator.getCharacterInstance();
+		bi.setText(str);
+		int length = 0;
+		while (bi.next() != BreakIterator.DONE) {
+			length++;
+		}
+		return length;
 	}
 }
