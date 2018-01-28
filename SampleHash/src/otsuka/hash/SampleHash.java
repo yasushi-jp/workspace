@@ -64,6 +64,17 @@ public class SampleHash {
 	}
 
 	/**
+	 * ファイルのハッシュ値（String）を返す
+	 * @param fileName ファイルパス
+	 * @param algorithmName アルゴリズム
+	 * @return ハッシュ値（String）
+	 */
+	public static String getfileHashString(String fileName, String algorithmName) {
+
+		return byteArrayToString(getfileHash(fileName, algorithmName));
+	}
+
+	/**
 	 * 文字列のハッシュ値を返す
 	 * @param str 文字列
 	 * @param algorithmName アルゴリズム
@@ -71,6 +82,16 @@ public class SampleHash {
 	 */
 	public static byte[] getHash(String str, String algorithmName) {
 		return getHash(str.getBytes(), algorithmName);
+	}
+
+	/**
+	 * 文字列のハッシュ値（String）を返す
+	 * @param str 文字列
+	 * @param algorithmName アルゴリズム
+	 * @return ハッシュ値（String）
+	 */
+	public static String getHashString(String str, String algorithmName) {
+		return byteArrayToString(getHash(str.getBytes(), algorithmName));
 	}
 
 	/**
@@ -91,6 +112,18 @@ public class SampleHash {
 
 		// ハッシュ値を格納
 		return md.digest();
+	}
+
+	/**
+	 * バイト配列のハッシュ値（String）を返す
+	 * @param byteArray バイト配列
+	 * @param algorithmName アルゴリズム
+	 * @return ハッシュ値
+	 */
+	public static String getHashString(byte[] byteArray, String algorithmName) {
+
+		// ハッシュ値を格納
+		return byteArrayToString(getHash(byteArray, algorithmName));
 	}
 
 	/**
