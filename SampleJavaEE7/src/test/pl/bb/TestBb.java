@@ -1,13 +1,16 @@
 package test.pl.bb;
 
 import java.io.Serializable;
-
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+ 
 import javax.annotation.Resource;
 import javax.enterprise.concurrent.ManagedExecutorService;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import test.fw.utils.MyRunnableTask;
+import test.fw.utils.MySingleTask;
 
 @Named
 @SessionScoped
@@ -59,6 +62,22 @@ public class TestBb implements Serializable {
 	      MyRunnableTask task = new MyRunnableTask();
 	      managedExecsvc.submit(task);
 	      System.out.println("メソッド終了");
+//	      managedExecsvc.shutdown();
+	      return null;
+	}
+
+	public String execExecutorService2() {
+	      MySingleTask task = new MySingleTask();
+
+	      Future<String> singleFuture = managedExecsvc.submit(task);
+	      try {
+			System.out.println(singleFuture.get());
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	      System.out.println("メソッド終了");
+//	      managedExecsvc.shutdown();
 	      return null;
 	}
 
