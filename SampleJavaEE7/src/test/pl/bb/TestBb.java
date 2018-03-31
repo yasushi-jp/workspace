@@ -2,12 +2,19 @@ package test.pl.bb;
 
 import java.io.Serializable;
 
+import javax.annotation.Resource;
+import javax.enterprise.concurrent.ManagedExecutorService;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+
+import test.fw.utils.MyRunnableTask;
 
 @Named
 @SessionScoped
 public class TestBb implements Serializable {
+
+	@Resource
+	ManagedExecutorService managedExecsvc;
 
 	String text1 = null;
 	String text2 = null;
@@ -46,6 +53,13 @@ public class TestBb implements Serializable {
 
 	public String validation7() {
 		return "validation7.xhtml?faces-redirect=true";
+	}
+
+	public String execExecutorService() {
+	      MyRunnableTask task = new MyRunnableTask();
+	      managedExecsvc.submit(task);
+	      System.out.println("メソッド終了");
+	      return null;
 	}
 
 	/**
