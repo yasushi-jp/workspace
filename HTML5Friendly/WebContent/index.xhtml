@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>index</title>
+</head>
+<body>
+	<form jsf:id="sampleform">
+		<h2>表示</h2>
+		<h:outputText value="#{testBackingBean.name1}" /><br/>
+		#{testBackingBean.name2}<br/>
+		<h2>テキストボックス</h2>
+		<h:inputText value="#{testBackingBean.name1}" /><br/>
+		<input jsf:id="name2" type="text" jsf:value="#{testBackingBean.name2}" /><br/>
+		<h2>テキストエリア</h2>
+		<h:inputTextarea value="#{testBackingBean.text1}" /><br/>
+		<textarea jsf:id="test">#{testBackingBean.text2}</textarea><br/>
+		<h2>ラジオボックス</h2>
+
+		<br/>
+	</form>
+</body>
+</html>
