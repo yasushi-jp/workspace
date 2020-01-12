@@ -2,17 +2,20 @@ package test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import chapters.configuration.Foo;
-
 public class TestMain {
-  final static Logger logger = LoggerFactory.getLogger(TestMain.class);
+  private static final Logger logger = LoggerFactory.getLogger(TestMain.class);
 
   public static void main(String[] args) {
-    logger.info("Entering application.");
-    logger.debug("debug.");
 
-    Foo foo = new Foo();
-    foo.doIt();
-    logger.info("Exiting application.");
-  }
+	  logger.debug("TestMain#main method was executed.");
+
+	  TestSample1 testSample1 = new TestSample1();
+	  testSample1.exec();
+
+	  TestSample2 testSample2 = new TestSample2();
+	  testSample2.exec();
+
+	  TestSample3 testSample3 = new TestSample3();
+	  testSample3.exec();
+}
 }

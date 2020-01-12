@@ -8,10 +8,9 @@
     </encoder>
   </appender>
 
-  <logger name="test" level="DEBUG">
+  <logger name="jp.co.otsuka.samplejavaee.mb.Mb" level="DEBUG">
     <appender-ref ref="STDOUT" />
   </logger>
-
 <!--
   <logger name="chapters.configuration" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT" />

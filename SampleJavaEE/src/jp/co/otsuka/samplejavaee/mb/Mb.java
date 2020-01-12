@@ -7,6 +7,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.slf4j.Logger;
+
 import jp.co.otsuka.samplejavaee.bb.Bb;
 
 /**
@@ -20,11 +22,14 @@ public class Mb {
 	@Inject
 	private Bb bb;
 
+	@Inject
+	private transient Logger logger;
+
 	/**
 	 *@return 次の画面（チェック有り）
 	 */
 	public String next() {
-
+		logger.info("next press.");
 		return "output.xhtml";
 	}
 
@@ -33,6 +38,7 @@ public class Mb {
 	 */
 	public String next2() {
 
+		logger.info("next2 press.");
 		Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
 		bb.setFood((String)map.get("food"));
 		bb.setAmount(Double.parseDouble(map.get("amount")));
