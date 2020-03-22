@@ -1,9 +1,8 @@
-package test;
+package test.io;
 
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -41,8 +40,6 @@ public class BinaryFileInput {
 				System.out.println();
 			}
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

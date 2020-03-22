@@ -1,15 +1,15 @@
-package test;
+package test.nio;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * バイナリーファイルを読み込む
  */
-public class BinaryFileInput {
+public class BinaryFileInputNioPart {
 
 	/**
 	 * @param args
@@ -17,21 +17,16 @@ public class BinaryFileInput {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		String inputFileName = "C:/dk/viewcount.xlsx";
+		Path path = Paths.get("C:/dk", "viewcount.xlsx");
 
-		// ファイルオブジェクトの生成
-		File inputFile = new File(inputFileName);
-
-		try (
-				// 入力ストリームの生成
-				FileInputStream fis = new FileInputStream(inputFile);
-				BufferedInputStream bis = new BufferedInputStream(fis);) {
+		// 入力ストリームの生成
+		try (InputStream inst = Files.newInputStream(path)) {
 			// 読み込み用バイト配列
 			byte[] buf = new byte[1024];
 
 			int len = 0;
 			// 入力ストリームからの読み込み（ファイルの読み込み）
-			while ((len = bis.read(buf)) != -1) {
+			while ((len = inst.read(buf)) != -1) {
 				String hex;
 				for (int i = 0; i < len; i++) {
 					hex = String.format("%1$x", buf[i]);
@@ -41,8 +36,6 @@ public class BinaryFileInput {
 				System.out.println();
 			}
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
