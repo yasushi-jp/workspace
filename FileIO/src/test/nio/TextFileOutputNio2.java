@@ -19,13 +19,13 @@ public class TextFileOutputNio2 {
 	public static void main(String[] args) {
 
 		// 書き込みファイルの名前
-		Path path = Paths.get("C:/dk", "test.txt");
+		Path path = Paths.get("C:/dk", "output.txt");
 
 		try (
-			// 出力ストリームの生成
+			// PrintWriterの生成
 			BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.UTF_8);
 			PrintWriter pw = new PrintWriter(bw);
-		){
+		) {
 			// ファイルへの書き込み
 			for (int i= 1; i <= 2; i++) {
 				pw.println("テキストファイル出力" + String.format("%02d", i));

@@ -18,15 +18,19 @@ public class TextFileInputNioPart1 {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		Path path = Paths.get("C:/dk", "test.txt");
+		Path path = Paths.get("C:/dk", "input.txt");
 
-		// ファイルオブジェクトの生成
+		// BufferedReaderの生成
 		try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
 
-			// テキストファイルからの読み込み
 			String msg;
+
+			// テキストファイルからの読み込み
 			while ((msg = br.readLine()) != null) {
+
+				// 標準出力に出力
 				System.out.println(msg);
+
 			}
 
 		} catch (IOException e) {

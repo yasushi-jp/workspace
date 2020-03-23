@@ -18,12 +18,16 @@ public class TextFileInputNio {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		Path path = Paths.get("C:/dk", "test.txt");
+		Path path = Paths.get("C:/dk", "input.txt");
 
-		// ファイルオブジェクトの生成
 		try {
+
+			// テキストファイルを一括読み込み
 			List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+
+			// 読み込んだテキストファイルを標準出力に出力
 			lines.forEach(line -> System.out.println(line));
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

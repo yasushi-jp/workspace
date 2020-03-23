@@ -16,10 +16,14 @@ public class BinaryFileInputNio {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		Path path = Paths.get("C:/dk", "test.txt");
+		Path path = Paths.get("C:/dk", "input.dat");
 
 		try {
+
+			// バイナリファイル一括読み込み
 			byte[] data = Files.readAllBytes(path);
+
+			// 読み込んだバイナリデータを16進数で標準出力に出力
 			String hex;
 			for (int i = 0; i < data.length; i++) {
 				hex = String.format("%1$x", data[i]);

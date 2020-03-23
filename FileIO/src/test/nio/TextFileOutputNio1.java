@@ -18,10 +18,11 @@ public class TextFileOutputNio1 {
 	public static void main(String[] args) {
 
 		// 書き込みファイルの名前
-		Path path = Paths.get("C:/dk", "test.txt");
+		Path path = Paths.get("C:/dk", "output.txt");
 
-		// 出力ストリームの生成
+		// BufferedWriterの生成
 		try (BufferedWriter bw = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+
 			// ファイルへの書き込み
 			for (int i= 1; i <= 2; i++) {
 				bw.write("テキストファイル出力" + String.format("%02d", i));

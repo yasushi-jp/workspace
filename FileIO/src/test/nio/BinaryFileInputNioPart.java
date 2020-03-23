@@ -17,16 +17,19 @@ public class BinaryFileInputNioPart {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		Path path = Paths.get("C:/dk", "viewcount.xlsx");
+		Path path = Paths.get("C:/dk", "input.xlsx");
 
 		// 入力ストリームの生成
 		try (InputStream inst = Files.newInputStream(path)) {
+
 			// 読み込み用バイト配列
 			byte[] buf = new byte[1024];
 
 			int len = 0;
 			// 入力ストリームからの読み込み（ファイルの読み込み）
 			while ((len = inst.read(buf)) != -1) {
+
+				// 読み込んだバイナリデータを16進数で標準出力に出力
 				String hex;
 				for (int i = 0; i < len; i++) {
 					hex = String.format("%1$x", buf[i]);
