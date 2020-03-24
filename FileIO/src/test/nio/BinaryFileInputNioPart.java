@@ -17,7 +17,7 @@ public class BinaryFileInputNioPart {
 	public static void main(String[] args) {
 
 		// 読み込みファイルの名前
-		Path path = Paths.get("C:/dk", "input.xlsx");
+		Path path = Paths.get("C:/dk", "input.dat");
 
 		// 入力ストリームの生成
 		try (InputStream inst = Files.newInputStream(path)) {
@@ -30,11 +30,8 @@ public class BinaryFileInputNioPart {
 			while ((len = inst.read(buf)) != -1) {
 
 				// 読み込んだバイナリデータを16進数で標準出力に出力
-				String hex;
 				for (int i = 0; i < len; i++) {
-					hex = String.format("%1$x", buf[i]);
-					hex = hex.length() == 1 ? "0" + hex : hex;
-					System.out.print(hex + " ");
+					System.out.printf("%02x ", buf[i]);
 				}
 				System.out.println();
 			}

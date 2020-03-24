@@ -24,11 +24,8 @@ public class BinaryFileInputNio {
 			byte[] data = Files.readAllBytes(path);
 
 			// 読み込んだバイナリデータを16進数で標準出力に出力
-			String hex;
 			for (int i = 0; i < data.length; i++) {
-				hex = String.format("%1$x", data[i]);
-				hex = hex.length() == 1 ? "0" + hex : hex;
-				System.out.print(hex + " ");
+				 System.out.printf("%02x ", data[i]);
 			}
 			System.out.println();
 
