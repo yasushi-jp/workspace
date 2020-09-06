@@ -23,6 +23,7 @@ public class ClassScan {
 	 */
 	public List<Class<?>> getClasses(String packageName) throws IOException, URISyntaxException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+
 		String path = packageName.replace('.', '/');
 		Enumeration<URL> resources = classLoader.getResources(path);
 		List<File> dirs = new ArrayList<File>();
