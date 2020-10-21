@@ -2,12 +2,12 @@ package test;
 
 import java.lang.annotation.Annotation;
 
-public class DataTestAnnotation implements SampleTestAnnotation {
+public class DataAnnotation implements SampleAnnotation {
 
 	@Override
 	public Class<? extends Annotation> annotationType() {
 		// TODO 自動生成されたメソッド・スタブ
-		return SampleTestAnnotation.class;
+		return SampleAnnotation.class;
 	}
 
 	@Override

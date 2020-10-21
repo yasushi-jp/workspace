@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 	ElementType.FIELD,
 })
 @Retention(RetentionPolicy.RUNTIME)
-public @interface SampleTestAnnotation {
+public @interface SampleAnnotation {
 	String id() default "00";
 	String name();
 }

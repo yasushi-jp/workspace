@@ -5,7 +5,7 @@ public class TestValidator {
 	private String id;
 	private String name;
 
-	public void initialize(SampleTestAnnotation pattern) {
+	public void initialize(SampleAnnotation pattern) {
 		id = pattern.id();
 		name = pattern.name();
 	}

@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		DataTestAnnotation data = new DataTestAnnotation();
+		DataAnnotation data = new DataAnnotation();
 		TestValidator test = new TestValidator();
 		test.initialize(data);
 		test.isValid(null);
